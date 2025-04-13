@@ -9945,3 +9945,54 @@ h6 {
     height: 560px;
     z-index: 10;
 }
+
+.whatsapp-float {
+    position: fixed;
+    bottom: 100px;
+    right: 33px;
+    z-index: 9999 !important; /* ensure it stays above all other UI */
+    text-decoration: none;
+  }
+  
+  .whatsapp-bubble {
+    width: 60px;
+    height: 60px;
+    background-color: #25d366;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    animation: blink 0.8s infinite;
+  }
+  
+  .whatsapp-bubble::before {
+    content: "";
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    background-color: #128c7e;
+    border-radius: 50%;
+    z-index: -1;
+    transform: translate(6px, 6px);
+  }
+  
+  .whatsapp-bubble img {
+    width: 28px;
+    height: 28px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* Blinking animation */
+  @keyframes blink {
+    0%, 100% {
+      box-shadow: 0 0 0 8px rgba(37, 211, 102, 0.2);
+    }
+    50% {
+      box-shadow: 0 0 0 12px rgba(37, 211, 102, 0.4);
+    }
+  }
+  
+  
